@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cliente</title>
+        <link rel="stylesheet" href="/fazentech html/CSS/style.CSS">
+    </head>
+    <body>
+<!-- 
+        <H1>Cliente</H1>
+        Nossa gama de clientes, vai desde o pequeno comercio <br>
+         até as grandes empresas, seguimos <br>
+          exportando nossos produtos para mais de 7 países. <br>
+        (“botão” pedidos)
+
+        <img src="/fazentech html/imagens/cliente 01.jpg" alt=""> -->
+        
+        <div class="container"></div>
+        <fieldset>
+                <legend> Dados do Cliente ou Empresa</legend>
+                <div id="input-block">
+                <input type="radio"  id="rSocial" name="usuario" checked><label for="rSocial">Razão Socioal</label> </input>
+                <input type="radio"  id="nome" name="usuario" ><label for="nome">Nome</label> </input>
+                <input name="name" id="name" required size="25" maxlength="30" placeholder="Nome">
+                </div> 
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>CPF</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>CNPJ</label>
+                            <input type="text" class="form-control">
+                        </div>
+               
+                <div id="input-block">
+                    <label for="nome">Data de Inauguração ou Nascimento</label> <input name="dtNas" id="dtNas" required type="date">
+                </div>
+              
+                <div id="input-block">
+                    <label for="cMail">E-mail</label><input name="tMail" id="cMail" type="email" size="25" maxlength="45" required placeholder="exemplo@exemplo...">
+                </div> 
+                <div id="input-block">
+                    <label for="nome">Telefone de Contato</label>
+                    <input type="tel" name="fone-cont" id="fone-cont" required>
+                </div>
+        </fieldset>
+
+        <fieldset>
+            <legend> Crie seu Logine e Senha</legend>
+            <div id="input-block">
+                <label for="login">Login</label>
+                <input type="text" name="login" id="login" size="35" maxlength="40" placeholder="Digite o seu Login">
+            </div>
+            <div id="input-block">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" size="25" maxlength="30" placeholder="20 digitos máximo">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço</legend>
+                <div id="input-block">
+                <label for="nome">Estado</label>
+                <input name="est" id="est" required>
+                </div>
+
+                <div id="input-block">
+                <label for="nome">Cidade</label>
+                <input name="cidad" id="cidad" required>
+                </div>
+
+                <div id="input-block">
+                <label for="nome">Logradouro</label>
+                <input name="logradouro" id="logradouro" required>
+                </div>
+
+                <div id="input-block">
+                <label for="nome">Número</label>
+                <input name="num" id="num" type="number" required>
+                </div>
+
+                <div id="input-block">
+                <label for="nome">Complemento</label>
+                <input name="compl" id="compl" required>
+                </div>
+
+                <div id="input-block">
+                <label for="nome">Endereço para Entrega</label>
+                <input name="end-entre" id="end-entre" required>
+                </div>
+
+                <div id="input-block">
+                <label for="nome">Endereço para Cobrança</label>
+                <input name="end-cobr" id="end-cobr" required>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>CEP</label>
+                    <input type="text" class="form-control">
+                </div>
+        <fieldset>
+           
+    </body>
+
+</html>
