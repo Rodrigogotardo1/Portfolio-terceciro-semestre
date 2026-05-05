@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <meta name="description" content="Fazentech — Acesse sua conta para gerenciar pedidos e acompanhar informações da Fazenda Gotardo.">
+    <link rel="stylesheet" href="../CSS/style.CSS">
+    <title>Login — Fazentech</title>
 </head>
 <body>
-    
+
+    <div class="login-wrapper">
+        <div class="login-card">
+            <img class="logo" src="imagens/logo fazentech.png" alt="Logo Fazentech">
+            <h1>Bem-vindo de volta</h1>
+            <p>Acesse sua conta Fazentech</p>
+
+            <form action="#" method="post" id="form-login">
+                <div class="input-block" style="text-align:left;">
+                    <label for="login-usuario">Usuário</label>
+                    <input
+                        type="text"
+                        id="login-usuario"
+                        name="usuario"
+                        required
+                        maxlength="40"
+                        placeholder="Digite seu usuário ou e-mail"
+                        autocomplete="username"
+                    >
+                </div>
+                <div class="input-block" style="text-align:left;">
+                    <label for="login-senha">Senha</label>
+                    <input
+                        type="password"
+                        id="login-senha"
+                        name="senha"
+                        required
+                        maxlength="30"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;margin-top:1rem;">
+                    Entrar
+                </button>
+            </form>
+
+            <p style="margin-top:1.5rem;font-size:0.88rem;color:var(--text-muted);">
+                Não tem uma conta?
+                <a href="clientes.html" style="color:var(--green-mid);font-weight:600;">Cadastre-se aqui</a>
+            </p>
+            <p style="margin-top:0.5rem;">
+                <a href="index.html" style="color:var(--text-muted);font-size:0.85rem;">← Voltar ao site</a>
+            </p>
+        </div>
+    </div>
+
 </body>
 </html>

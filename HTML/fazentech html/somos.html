@@ -3,13 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quem somos</title>
+    <meta name="description" content="Fazentech — Conheça a história e os valores da Fazenda Gotardo, tradição familiar aliada à tecnologia moderna.">
+    <link rel="stylesheet" href="../CSS/style.CSS">
+    <title>Quem Somos — Fazentech</title>
 </head>
 <body>
-    <h1>Quem somos</h1> 
-    Na fazenda Gotardo, são utilizadas as mais novas e modernas <br> tecnologias disponíveis no mercado, para o cuidado da plantação, <br> sustentabilidade e rodizio da plantação, aproveitando ao máximo <br> os insumos e as sementes, através do Rodizio da plantação. <br>
-    (“botão” conheça quem somos)
 
-    <img src="/fazentech html/imagens/fazenda drone.jpg" alt="verificando a plantação com a utilização de Drones">
+    <header class="cabecalho">
+        <figure>
+            <a href="index.html">
+                <img src="imagens/logo fazentech.png" alt="Logo Fazentech">
+            </a>
+        </figure>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="somos.html" class="active">Quem Somos</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="forum.html">Fórum</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="corpo">
+
+        <section>
+            <h1>Quem Somos</h1>
+            <p>
+                Na fazenda Gotardo, são utilizadas as mais novas e modernas tecnologias disponíveis
+                no mercado para o cuidado da plantação, sustentabilidade e rodízio da plantação,
+                aproveitando ao máximo os insumos e as sementes, através do Rodízio da plantação.
+            </p>
+            <p>
+                Somos uma família que há gerações une tradição e inovação para entregar produtos
+                de altíssima qualidade à mesa dos nossos clientes. Nossa missão é produzir com
+                responsabilidade, cuidando da terra e do bem-estar dos animais.
+            </p>
+
+            <div class="img-grid">
+                <img src="imagens/fazenda drone.jpg" alt="Verificando a plantação com a utilização de Drones">
+                <img src="imagens/fazenda1.jpg" alt="Vista aérea da fazenda">
+                <img src="imagens/plantacao1.jpg" alt="Plantação da fazenda">
+            </div>
+
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-dark);margin:2rem 0 1rem;">Nossa Missão</h2>
+            <p>
+                Produzir alimentos de qualidade premium com responsabilidade ambiental e social,
+                fortalecendo o agronegócio brasileiro e levando o sabor da terra brasileira
+                para o mundo.
+            </p>
+
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-dark);margin:2rem 0 1rem;">Tecnologia no Campo</h2>
+            <p>
+                Utilizamos drones para monitoramento das plantações, sistemas de irrigação inteligente,
+                controle de rebanho por tecnologia RFID e análise de solo computadorizada.
+            </p>
+
+            <div class="img-grid">
+                <img src="imagens/plantacao2.jpg" alt="Plantação de grãos">
+                <img src="imagens/colheira 001.jpg" alt="Colheita de grãos">
+            </div>
+
+            <a href="clientes.html" class="btn btn-primary" style="margin-top:1rem;">
+                Quero ser Cliente
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fazentech — Fazenda Gotardo. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>

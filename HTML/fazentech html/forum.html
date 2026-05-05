@@ -3,20 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum</title>
+    <meta name="description" content="Fazentech — Fórum de clientes da Fazenda Gotardo. Compartilhe sua experiência e opiniões.">
+    <link rel="stylesheet" href="../CSS/style.CSS">
+    <title>Fórum — Fazentech</title>
 </head>
 <body>
-    <h1>Forum</h1>
-    <img src="/fazentech html/imagens/avatar 001.jpg" alt="avatar do cliente"> 
-    Cliente
-    <textarea name="camp_forum" id="camp_forum" cols="30" rows="10"></textarea>
 
-    <img src="/fazentech html/imagens/avatar 002.jpg" alt="avatar do cliente"> 
-    Cliente
-    <textarea name="camp_forum" id="camp_forum" cols="30" rows="10"></textarea>
+    <header class="cabecalho">
+        <figure>
+            <a href="index.html">
+                <img src="imagens/logo fazentech.png" alt="Logo Fazentech">
+            </a>
+        </figure>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="somos.html">Quem Somos</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="forum.html" class="active">Fórum</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <img src="/fazentech html/imagens/avatar 003.jpg" alt="avatar do cliente"> 
-    Cliente
-    <textarea name="camp_forum" id="camp_forum" cols="30" rows="10"></textarea>
+    <main class="corpo">
+
+        <section>
+            <h1>Fórum de Clientes</h1>
+            <p>
+                Compartilhe sua experiência com nossos produtos. Sua opinião é muito importante
+                para continuarmos melhorando!
+            </p>
+
+            <div class="forum-post">
+                <img src="imagens/avatar 001.jpg" alt="Avatar do cliente 1">
+                <div class="post-content">
+                    <strong>Cliente — Ricardo G.</strong>
+                    <textarea id="camp_forum_1" name="camp_forum_1" rows="4" placeholder="Deixe seu comentário aqui...">Os queijos da Fazenda Gotardo são incríveis! Qualidade de verdade.</textarea>
+                </div>
+            </div>
+
+            <div class="forum-post">
+                <img src="imagens/avatar 002.jpg" alt="Avatar do cliente 2">
+                <div class="post-content">
+                    <strong>Cliente — Gabriel G.</strong>
+                    <textarea id="camp_forum_2" name="camp_forum_2" rows="4" placeholder="Deixe seu comentário aqui...">Leite fresco todo dia, entrega pontual. Super recomendo!</textarea>
+                </div>
+            </div>
+
+            <div class="forum-post">
+                <img src="imagens/avatar 003.jpg" alt="Avatar do cliente 3">
+                <div class="post-content">
+                    <strong>Cliente — Rebecca G.</strong>
+                    <textarea id="camp_forum_3" name="camp_forum_3" rows="4" placeholder="Deixe seu comentário aqui...">Produtos naturais e saborosos. A manteiga é a melhor que já provei!</textarea>
+                </div>
+            </div>
+
+            <div class="forum-post">
+                <img src="imagens/avatar 004.jpg" alt="Seu avatar">
+                <div class="post-content">
+                    <strong>Deixe seu comentário</strong>
+                    <form action="#" method="post" id="form-forum">
+                        <textarea id="camp_forum_novo" name="comentario" rows="4" placeholder="Escreva aqui sua experiência com a Fazentech..."></textarea>
+                        <button type="submit" class="btn btn-primary" style="margin-top:0.75rem;" id="btn-enviar-forum">
+                            Publicar Comentário
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fazentech — Fazenda Gotardo. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>

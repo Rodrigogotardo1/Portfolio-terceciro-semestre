@@ -1,108 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cliente</title>
-        <link rel="stylesheet" href="/fazentech html/CSS/style.CSS">
-    </head>
-    <body>
-<!-- 
-        <H1>Cliente</H1>
-        Nossa gama de clientes, vai desde o pequeno comercio <br>
-         até as grandes empresas, seguimos <br>
-          exportando nossos produtos para mais de 7 países. <br>
-        (“botão” pedidos)
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fazentech — Cadastro de clientes da Fazenda Gotardo. Registre-se para fazer pedidos e acompanhar seus produtos.">
+    <link rel="stylesheet" href="../CSS/style.CSS">
+    <title>Cadastro de Cliente — Fazentech</title>
+</head>
+<body>
 
-        <img src="/fazentech html/imagens/cliente 01.jpg" alt=""> -->
-        
-        <div class="container"></div>
-        <fieldset>
-                <legend> Dados do Cliente ou Empresa</legend>
-                <div id="input-block">
-                <input type="radio"  id="rSocial" name="usuario" checked><label for="rSocial">Razão Socioal</label> </input>
-                <input type="radio"  id="nome" name="usuario" ><label for="nome">Nome</label> </input>
-                <input name="name" id="name" required size="25" maxlength="30" placeholder="Nome">
-                </div> 
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label>CPF</label>
-                            <input type="text" class="form-control">
+    <header class="cabecalho">
+        <figure>
+            <a href="index.html">
+                <img src="imagens/logo fazentech.png" alt="Logo Fazentech">
+            </a>
+        </figure>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="somos.html">Quem Somos</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="clientes.html" class="active">Clientes</a></li>
+                <li><a href="forum.html">Fórum</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="corpo">
+        <section>
+            <h1>Cadastro de Cliente</h1>
+            <p>Preencha os dados abaixo para se tornar um cliente Fazentech e realizar pedidos.</p>
+
+            <div class="form-container">
+                <form action="#" method="post" id="form-cadastro">
+
+                    <fieldset>
+                        <legend>Dados Pessoais / Empresa</legend>
+
+                        <div class="radio-group">
+                            <label for="rSocial">
+                                <input type="radio" id="rSocial" name="tipo_pessoa" value="razao_social" checked>
+                                Razão Social (Empresa)
+                            </label>
+                            <label for="rNome">
+                                <input type="radio" id="rNome" name="tipo_pessoa" value="nome">
+                                Nome (Pessoa Física)
+                            </label>
                         </div>
-                        <div class="form-group col-md-4">
-                            <label>CNPJ</label>
-                            <input type="text" class="form-control">
+
+                        <div class="input-block">
+                            <label for="nome-razao">Nome / Razão Social</label>
+                            <input type="text" id="nome-razao" name="nome_razao" required maxlength="80" placeholder="Seu nome ou razão social">
                         </div>
-               
-                <div id="input-block">
-                    <label for="nome">Data de Inauguração ou Nascimento</label> <input name="dtNas" id="dtNas" required type="date">
-                </div>
-              
-                <div id="input-block">
-                    <label for="cMail">E-mail</label><input name="tMail" id="cMail" type="email" size="25" maxlength="45" required placeholder="exemplo@exemplo...">
-                </div> 
-                <div id="input-block">
-                    <label for="nome">Telefone de Contato</label>
-                    <input type="tel" name="fone-cont" id="fone-cont" required>
-                </div>
-        </fieldset>
 
-        <fieldset>
-            <legend> Crie seu Logine e Senha</legend>
-            <div id="input-block">
-                <label for="login">Login</label>
-                <input type="text" name="login" id="login" size="35" maxlength="40" placeholder="Digite o seu Login">
+                        <div class="form-row">
+                            <div class="input-block">
+                                <label for="cpf">CPF</label>
+                                <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="000.000.000-00">
+                            </div>
+                            <div class="input-block">
+                                <label for="cnpj">CNPJ</label>
+                                <input type="text" id="cnpj" name="cnpj" maxlength="18" placeholder="00.000.000/0000-00">
+                            </div>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="dtNas">Data de Nascimento / Inauguração</label>
+                            <input type="date" id="dtNas" name="dtNas" required>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="cMail">E-mail</label>
+                            <input type="email" id="cMail" name="email" size="25" maxlength="45" required placeholder="exemplo@email.com">
+                        </div>
+
+                        <div class="input-block">
+                            <label for="fone-cont">Telefone de Contato</label>
+                            <input type="tel" id="fone-cont" name="telefone" required placeholder="(00) 00000-0000">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Criar Login e Senha</legend>
+
+                        <div class="input-block">
+                            <label for="login-cad">Login</label>
+                            <input type="text" id="login-cad" name="login" size="35" maxlength="40" required placeholder="Escolha seu nome de usuário">
+                        </div>
+
+                        <div class="input-block">
+                            <label for="senha-cad">Senha</label>
+                            <input type="password" id="senha-cad" name="senha" maxlength="30" required placeholder="Mínimo 6 caracteres">
+                        </div>
+
+                        <div class="input-block">
+                            <label for="confirma-senha">Confirmar Senha</label>
+                            <input type="password" id="confirma-senha" name="confirma_senha" maxlength="30" required placeholder="Repita a senha">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Endereço</legend>
+
+                        <div class="form-row">
+                            <div class="input-block">
+                                <label for="est">Estado</label>
+                                <input type="text" id="est" name="estado" required placeholder="Ex: Paraná">
+                            </div>
+                            <div class="input-block">
+                                <label for="cidad">Cidade</label>
+                                <input type="text" id="cidad" name="cidade" required placeholder="Ex: Londrina">
+                            </div>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="logradouro">Logradouro</label>
+                            <input type="text" id="logradouro" name="logradouro" required placeholder="Rua, Avenida, etc.">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="input-block">
+                                <label for="num">Número</label>
+                                <input type="number" id="num" name="numero" required placeholder="Ex: 100">
+                            </div>
+                            <div class="input-block">
+                                <label for="cep">CEP</label>
+                                <input type="text" id="cep" name="cep" maxlength="9" placeholder="00000-000">
+                            </div>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="compl">Complemento</label>
+                            <input type="text" id="compl" name="complemento" placeholder="Apto, bloco, etc. (opcional)">
+                        </div>
+
+                        <div class="input-block">
+                            <label for="end-entre">Endereço para Entrega</label>
+                            <input type="text" id="end-entre" name="end_entrega" required placeholder="Se diferente do endereço principal">
+                        </div>
+
+                        <div class="input-block">
+                            <label for="end-cobr">Endereço para Cobrança</label>
+                            <input type="text" id="end-cobr" name="end_cobranca" required placeholder="Se diferente do endereço principal">
+                        </div>
+                    </fieldset>
+
+                    <div style="text-align:center;margin-top:1rem;">
+                        <button type="submit" id="btn-cadastrar" class="btn btn-primary">
+                            Cadastrar Cliente
+                        </button>
+                        <a href="login.html" class="btn btn-outline" style="margin-left:1rem;">
+                            Já tenho conta
+                        </a>
+                    </div>
+
+                </form>
             </div>
-            <div id="input-block">
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha" size="25" maxlength="30" placeholder="20 digitos máximo">
-            </div>
-        </fieldset>
+        </section>
+    </main>
 
-        <fieldset>
-            <legend>Endereço</legend>
-                <div id="input-block">
-                <label for="nome">Estado</label>
-                <input name="est" id="est" required>
-                </div>
+    <footer>
+        <p>&copy; 2024 Fazentech — Fazenda Gotardo. Todos os direitos reservados.</p>
+    </footer>
 
-                <div id="input-block">
-                <label for="nome">Cidade</label>
-                <input name="cidad" id="cidad" required>
-                </div>
-
-                <div id="input-block">
-                <label for="nome">Logradouro</label>
-                <input name="logradouro" id="logradouro" required>
-                </div>
-
-                <div id="input-block">
-                <label for="nome">Número</label>
-                <input name="num" id="num" type="number" required>
-                </div>
-
-                <div id="input-block">
-                <label for="nome">Complemento</label>
-                <input name="compl" id="compl" required>
-                </div>
-
-                <div id="input-block">
-                <label for="nome">Endereço para Entrega</label>
-                <input name="end-entre" id="end-entre" required>
-                </div>
-
-                <div id="input-block">
-                <label for="nome">Endereço para Cobrança</label>
-                <input name="end-cobr" id="end-cobr" required>
-                </div>
-
-                <div class="form-group col-md-4">
-                    <label>CEP</label>
-                    <input type="text" class="form-control">
-                </div>
-        <fieldset>
-           
-    </body>
-
+</body>
 </html>
