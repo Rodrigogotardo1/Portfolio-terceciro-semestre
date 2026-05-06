@@ -33,18 +33,21 @@
             <p>Preencha os dados abaixo para se tornar um cliente Fazentech e realizar pedidos.</p>
 
             <div class="form-container">
-                <form action="#" method="post" id="form-cadastro">
+                <!-- Alerta de feedback -->
+                <div id="alerta-cadastro" style="display:none;padding:1rem 1.25rem;border-radius:8px;margin-bottom:1.5rem;font-weight:500;font-size:0.95rem;"></div>
+
+                <form id="form-cadastro">
 
                     <fieldset>
                         <legend>Dados Pessoais / Empresa</legend>
 
                         <div class="radio-group">
                             <label for="rSocial">
-                                <input type="radio" id="rSocial" name="tipo_pessoa" value="razao_social" checked>
+                                <input type="radio" id="rSocial" name="tipo_pessoa" value="juridica" checked>
                                 Razão Social (Empresa)
                             </label>
                             <label for="rNome">
-                                <input type="radio" id="rNome" name="tipo_pessoa" value="nome">
+                                <input type="radio" id="rNome" name="tipo_pessoa" value="fisica">
                                 Nome (Pessoa Física)
                             </label>
                         </div>
@@ -163,6 +166,80 @@
     <footer>
         <p>&copy; 2024 Fazentech — Fazenda Gotardo. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+    document.getElementById('form-cadastro').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const btn    = document.getElementById('btn-cadastrar');
+        const alerta = document.getElementById('alerta-cadastro');
+        const form   = e.target;
+
+        // Coletar dados do formulário
+        const dados = {
+            tipo_pessoa:    form.querySelector('[name="tipo_pessoa"]:checked')?.value,
+            nome_razao:     form.querySelector('[name="nome_razao"]').value.trim(),
+            cpf:            form.querySelector('[name="cpf"]').value.trim(),
+            cnpj:           form.querySelector('[name="cnpj"]').value.trim(),
+            dtNas:          form.querySelector('[name="dtNas"]').value,
+            email:          form.querySelector('[name="email"]').value.trim(),
+            telefone:       form.querySelector('[name="telefone"]').value.trim(),
+            login:          form.querySelector('[name="login"]').value.trim(),
+            senha:          form.querySelector('[name="senha"]').value,
+            confirma_senha: form.querySelector('[name="confirma_senha"]').value,
+            estado:         form.querySelector('[name="estado"]').value.trim(),
+            cidade:         form.querySelector('[name="cidade"]').value.trim(),
+            logradouro:     form.querySelector('[name="logradouro"]').value.trim(),
+            numero:         form.querySelector('[name="numero"]').value.trim(),
+            complemento:    form.querySelector('[name="complemento"]').value.trim(),
+            cep:            form.querySelector('[name="cep"]').value.trim(),
+            end_entrega:    form.querySelector('[name="end_entrega"]').value.trim(),
+            end_cobranca:   form.querySelector('[name="end_cobranca"]').value.trim(),
+        };
+
+        // Desabilitar botão durante envio
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+        alerta.style.display = 'none';
+
+        try {
+            const res  = await fetch('/api/cadastro', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dados),
+            });
+            const json = await res.json();
+
+            if (json.ok) {
+                // Sucesso
+                alerta.style.background = '#e8f5e9';
+                alerta.style.color      = '#2d6a33';
+                alerta.style.border     = '1.5px solid #4caf50';
+                alerta.textContent      = json.mensagem;
+                alerta.style.display    = 'block';
+                form.reset();
+                // Redireciona para login após 2 segundos
+                setTimeout(() => { window.location.href = 'login.html'; }, 2000);
+            } else {
+                // Erro da API
+                alerta.style.background = '#fff3f3';
+                alerta.style.color      = '#b71c1c';
+                alerta.style.border     = '1.5px solid #ef9a9a';
+                alerta.textContent      = json.erro || 'Erro ao cadastrar. Tente novamente.';
+                alerta.style.display    = 'block';
+            }
+        } catch (err) {
+            alerta.style.background = '#fff3f3';
+            alerta.style.color      = '#b71c1c';
+            alerta.style.border     = '1.5px solid #ef9a9a';
+            alerta.textContent      = 'Falha na conexão. Verifique sua internet e tente novamente.';
+            alerta.style.display    = 'block';
+        } finally {
+            btn.disabled    = false;
+            btn.textContent = 'Cadastrar Cliente';
+        }
+    });
+    </script>
 
 </body>
 </html>

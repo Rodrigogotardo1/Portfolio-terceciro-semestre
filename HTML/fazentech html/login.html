@@ -15,7 +15,10 @@
             <h1>Bem-vindo de volta</h1>
             <p>Acesse sua conta Fazentech</p>
 
-            <form action="#" method="post" id="form-login">
+            <!-- Alerta de feedback -->
+            <div id="alerta-login" style="display:none;padding:0.9rem 1.1rem;border-radius:8px;margin-bottom:1.25rem;font-weight:500;font-size:0.9rem;text-align:left;"></div>
+
+            <form id="form-login">
                 <div class="input-block" style="text-align:left;">
                     <label for="login-usuario">Usuário</label>
                     <input
@@ -55,6 +58,64 @@
             </p>
         </div>
     </div>
+
+    <script>
+    document.getElementById('form-login').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const btn    = document.querySelector('[type="submit"]');
+        const alerta = document.getElementById('alerta-login');
+        const form   = e.target;
+
+        const dados = {
+            usuario: form.querySelector('[name="usuario"]').value.trim(),
+            senha:   form.querySelector('[name="senha"]').value,
+        };
+
+        btn.disabled    = true;
+        btn.textContent = 'Verificando...';
+        alerta.style.display = 'none';
+
+        try {
+            const res  = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dados),
+            });
+            const json = await res.json();
+
+            if (json.ok) {
+                // Salvar nome do usuário na session para exibir depois
+                sessionStorage.setItem('fazentech_usuario', json.nome);
+                sessionStorage.setItem('fazentech_login',   json.login);
+
+                // Feedback de sucesso e redirecionamento
+                alerta.style.background = '#e8f5e9';
+                alerta.style.color      = '#2d6a33';
+                alerta.style.border     = '1.5px solid #4caf50';
+                alerta.textContent      = json.mensagem;
+                alerta.style.display    = 'block';
+
+                setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+            } else {
+                alerta.style.background = '#fff3f3';
+                alerta.style.color      = '#b71c1c';
+                alerta.style.border     = '1.5px solid #ef9a9a';
+                alerta.textContent      = json.erro || 'Usuário ou senha incorretos.';
+                alerta.style.display    = 'block';
+            }
+        } catch (err) {
+            alerta.style.background = '#fff3f3';
+            alerta.style.color      = '#b71c1c';
+            alerta.style.border     = '1.5px solid #ef9a9a';
+            alerta.textContent      = 'Falha na conexão. Verifique sua internet e tente novamente.';
+            alerta.style.display    = 'block';
+        } finally {
+            btn.disabled    = false;
+            btn.textContent = 'Entrar';
+        }
+    });
+    </script>
 
 </body>
 </html>
