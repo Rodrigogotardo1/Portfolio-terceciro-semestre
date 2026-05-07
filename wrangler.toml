@@ -1,8 +1,8 @@
 name = "fazentech"
-pages_build_output_dir = "HTML"
+pages_build_output_dir = "HTML/fazentech html"
 compatibility_date = "2024-09-23"
 
 [[d1_databases]]
 binding = "DB"
 database_name = "fazentech-db"
-database_id = "SUBSTITUIR_APOS_CRIAR_DB"
+database_id = "7b64228e-2b33-4368-8281-869e1973949b"
